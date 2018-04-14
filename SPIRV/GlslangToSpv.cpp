@@ -7025,6 +7025,7 @@ void GlslangToSpv(const glslang::TIntermediate& intermediate, std::vector<unsign
         }
         optimizer.RegisterPass(CreateAggressiveDCEPass());
         optimizer.RegisterPass(CreateCFGCleanupPass());
+        optimizer.RegisterLegalizationPasses();
 
         if (!optimizer.Run(spirv.data(), spirv.size(), &spirv))
             return;
