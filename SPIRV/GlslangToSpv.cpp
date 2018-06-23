@@ -7009,7 +7009,6 @@ void GlslangToSpv(const glslang::TIntermediate& intermediate, std::vector<unsign
         optimizer.RegisterPass(CreateLocalSingleStoreElimPass());
         optimizer.RegisterPass(CreateSimplificationPass());
         optimizer.RegisterPass(CreateAggressiveDCEPass());
-        optimizer.RegisterPass(CreateVectorDCEPass());
         optimizer.RegisterPass(CreateDeadInsertElimPass());
         optimizer.RegisterPass(CreateAggressiveDCEPass());
         optimizer.RegisterPass(CreateDeadBranchElimPass());
@@ -7018,7 +7017,6 @@ void GlslangToSpv(const glslang::TIntermediate& intermediate, std::vector<unsign
         optimizer.RegisterPass(CreateIfConversionPass());
         optimizer.RegisterPass(CreateSimplificationPass());
         optimizer.RegisterPass(CreateAggressiveDCEPass());
-        optimizer.RegisterPass(CreateVectorDCEPass());
         optimizer.RegisterPass(CreateDeadInsertElimPass());
         if (options->optimizeSize) {
             optimizer.RegisterPass(CreateRedundancyEliminationPass());
